@@ -1,0 +1,13 @@
+.family {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid black;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.family .block {
+    width: 50%;
+}
