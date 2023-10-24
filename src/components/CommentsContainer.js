@@ -15,7 +15,7 @@ const CommentsContainer = () => {
 
     return (
         <div>
-                <CommentsForm/>
+                <CommentsForm setComments={setComments}/>
                             <hr/>
                 <Comments comments={comments}/>
 
