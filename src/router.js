@@ -6,6 +6,8 @@ import {UserDetailsPage} from "./pages/UserDetailsPage";
 import {postService} from "./services/postService";
 import {userDetailsService} from "./services/userDetailsService";
 import {Posts} from "./components/Posts";
+import {Post} from "./components/Post/Post";
+import {PostPage} from "./pages/PostPage";
 
 
 
@@ -21,7 +23,8 @@ const router = createBrowserRouter([
                 element: <UserDetailsPage />,
                 loader: ({ params: { id } }) => userDetailsService.getById(id),
                 children: [
-                    {path:'posts', element:<Posts/>, loader:({params:{id}})=>postService.getByUserId(id)}
+                    {path:'posts', element:<Posts/>, loader:({params:{id}})=>postService.getByUserId(id)},
+                    {path:'post/:postId', element:<PostPage/>, loader:({params:{id}})=>postService.getByUserId(id)}
                 ],
             },
         ],

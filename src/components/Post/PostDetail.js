@@ -1,17 +1,13 @@
 import React from 'react';
 
-
-
-const Title = ({post}) => {
-   const {title}=post
-
+const PostDetail = ({post}) => {
+   const {id,title} = post
     return (
         <div>
-
+            {id}
             {title}
-
         </div>
     );
 };
 
-export {Title};
+export {PostDetail};

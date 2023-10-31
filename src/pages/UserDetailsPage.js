@@ -6,6 +6,7 @@ import {Outlet, useLoaderData} from "react-router-dom";
 
 
 
+
 const UserDetailsPage = () => {
     const {data} = useLoaderData();
 

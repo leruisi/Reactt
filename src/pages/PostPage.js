@@ -1,10 +1,15 @@
 import React from 'react';
-import {Outlet} from "react-router-dom";
+
+import {Outlet, useLoaderData} from "react-router-dom";
+import {Post} from "../components/Post/Post";
+
 
 const PostPage = () => {
+
+        const {data} = useLoaderData();
     return (
         <div>
-
+            <Post post={data}/>
             <Outlet/>
         </div>
     );
