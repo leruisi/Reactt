@@ -1,12 +1,15 @@
 import React from 'react';
 
 import {UserDetails} from "../components/Details/UserDetails";
-import {useRouteLoaderData} from "react-router-dom";
+import {Outlet, useLoaderData} from "react-router-dom";
+
+import TitlePage from "./TitlePage";
 
 
 
 const UserDetailsPage = () => {
-    const {user} = useRouteLoaderData();
+    const {data} = useLoaderData();
+
 
 
 
@@ -14,7 +17,10 @@ const UserDetailsPage = () => {
     return (
         <div>
             Details
-            <UserDetails  user={user} />
+            <UserDetails  user={data} />
+            <Outlet/>
+            <TitlePage/>
+
         </div>
     );
 
