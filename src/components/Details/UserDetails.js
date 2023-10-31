@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { userDetailsService } from "../../services/userDetailsService";
-import {Detail} from "./Detail";
-
+import React from 'react';
 
 const UserDetails = ({user}) => {
-    const [userDetails, setUserDetails] = useState({});
-
-    useEffect(() => {
-        userDetailsService.getById(user.id).then(({ data }) => setUserDetails(data));
-    }, [user.id]);
-
+    const {id,name,userId}=user
     return (
         <div>
-            {userDetails && (
-                <Detail detail={userDetails} />
-            )}
+            {id}
+            {name}
+            {userId}
         </div>
     );
 };
