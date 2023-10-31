@@ -14,7 +14,7 @@ const urls = {
         byPostId: (postId) => `${userDetails}/${postId}/post`
     },
     posts: {
-        byUserId: (userId) => `${userDetails}/${userId}/posts`
+        byUserId: (userId) => `${users}/${userId}/posts`
     }
 }
 

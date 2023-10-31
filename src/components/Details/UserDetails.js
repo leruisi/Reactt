@@ -15,7 +15,7 @@ const UserDetails = ({user}) => {
             <div>Company name: {company.name}</div>
             <br/>
 
-            <button onClick={()=>navigate(`/user-details/:id/post/:postId`)}>post of current user</button>
+            <button onClick={()=>navigate(`/user-details/${id}/posts`)}>post of current user</button>
 
 
         </div>
