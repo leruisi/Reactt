@@ -1,17 +1,14 @@
 import React from 'react';
-import {useLoaderData} from "react-router-dom";
-import {PostDetail} from "./PostDetail";
 
-const Post = () => {
+const Post = ({post}) => {
 
-    const {data}=useLoaderData()
+    const {id,title}=post
     return (
         <div>
-            {data.map(post=><PostDetail key={post.id} post={post}/>)}
-
-
-
+            {id}-
+            {title}
         </div>
     );
 };
+
 export {Post};

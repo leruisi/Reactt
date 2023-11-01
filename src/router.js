@@ -4,10 +4,10 @@ import {MainLayout} from "./Layout/MainLayout";
 import {UsersPage} from "./pages/UsersPage";
 import {UserDetailsPage} from "./pages/UserDetailsPage";
 import {postService} from "./services/postService";
-import {userDetailsService} from "./services/userDetailsService";
-import {Posts} from "./components/Posts";
-import {Post} from "./components/Post/Post";
 import {PostPage} from "./pages/PostPage";
+import {userService} from "./services/usersService";
+import {PostDetailsPage} from "./pages/PostDetailsPage";
+
 
 
 
@@ -17,16 +17,21 @@ const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
             { index: true, element: <Navigate to={'users'} /> },
-            { path: 'users', element: <UsersPage /> },
+            { path: 'users', element: <UsersPage /> , loader:()=>userService.getAll()},
+
+
             {
-                path: '/user-details/:id',
-                element: <UserDetailsPage />,
-                loader: ({ params: { id } }) => userDetailsService.getById(id),
+                path: 'users/:userId', element: <UserDetailsPage />,
                 children: [
-                    {path:'posts', element:<Posts/>, loader:({params:{id}})=>postService.getByUserId(id)},
-                    {path:'post/:postId', element:<PostPage/>, loader:({params:{id}})=>postService.getByUserId(id)}
-                ],
-            },
+                    {path:'posts', element:<PostPage/> }]},
+
+
+                 {
+                        path:'users/:userId/posts/:postId', element:<PostDetailsPage/>, loader:({postId})=>postService.getById(postId),
+
+                  }
+
+
         ],
     },
 ]);

@@ -1,16 +1,12 @@
 import React from 'react';
-
-import {Outlet, useLoaderData} from "react-router-dom";
-import {Post} from "../components/Post/Post";
-
+import {Posts} from "../components/Post/Posts";
 
 const PostPage = () => {
-
-        const {data} = useLoaderData();
+    //будем рендериь (обновлять) компоненту пост
     return (
         <div>
-            <Post post={data}/>
-            <Outlet/>
+            Post
+            <Posts/>
         </div>
     );
 };
